@@ -1,5 +1,13 @@
 # Verification evidence
 
+## Publication record — October 28, 2026
+
+The owner subsequently explicitly authorized merging PR #1 and enabling GitHub Pages for live review. The reviewed commit was merged to main as `9ad9a91f03e311e282974d50f4bfa0c20f595d68`. Pages serves **main /docs**, with HTTPS enforced, at https://kaiomote.github.io/mypayce-legal/.
+
+The 37 static tests passed again before publication. All six EN/JA page URLs and the stylesheet returned HTTP 200 and exactly matched the reviewed local files; language/effective-date checks passed and no draft/noindex markers were present. No app, EAS, RevenueCat or App Store configuration was changed. Publication authorization does not certify legal compliance or resolve the internal legal questions.
+
+The pre-publication records below describe their historical authorization boundaries; the later express publication request supersedes those boundaries for this deployment.
+
 ## Finalization pass — October 28, 2026
 
 The owner authorized clean reader-facing copy and visual checks, but **not merging, publication or Pages activation**. Public pages now use the effective date **November 1, 2026 / 2026年11月1日**, without draft/noindex notices, geographic exclusions or internal legal-review commentary. The draft PR and internal unresolved questions remain.

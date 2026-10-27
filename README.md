@@ -1,12 +1,12 @@
 # MyPayce legal information
 
-A responsive English/Japanese legal-information website for MyPayce, prepared for **owner and legal review**. This repository is public, but the site must not be published until the owner approves the final documents.
+A responsive English/Japanese legal-information website for MyPayce, prepared for **owner and legal review**. The owner explicitly authorized merging and GitHub Pages publication on October 28, 2026 for live review.
 
-**Status: public copy finalized for owner approval; not published.** Effective date set to **November 1, 2026 / 2026年11月1日**. This preparation does not certify legal compliance or authorize publication. MyPayce is an app/trade name, not a verified legal entity. No residential address or personal phone number belongs in this repository, Git history or PR discussions.
+**Status: published for owner review at https://kaiomote.github.io/mypayce-legal/.** Effective date set to **November 1, 2026 / 2026年11月1日**. Publication does not certify legal compliance; unresolved legal/operational questions remain in the review notes. MyPayce is an app/trade name, not a verified legal entity. No residential address or personal phone number belongs in this repository, Git history or PR discussions.
 
 The owner intends broad international App Store distribution excluding the 27 EU member countries. Japan and the United States are primary research reference points, not the only distribution markets. No worldwide-compliance claim is made. EU exclusion is not treated as a blanket privacy-law exemption.
 
-## Proposed URLs (not published)
+## Live URLs
 
 | Document | English | Japanese |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ Contact: **kaiomote10+MyPayce@gmail.com**, the same mailbox used for app feedbac
 - [Publication checklist and exact Pages setup](review/publication-checklist.md): unresolved blockers and owner-only release steps.
 - [Verification evidence](review/verification.md): automated checks and manual QA still required.
 
-At the owner's request, all six public pages now use finalized reader-facing copy and the effective date above, without draft banners, noindex or geographic-distribution commentary. Research, unresolved disclosure questions and distribution details remain only in this README and the review materials. The PR remains a draft and Pages remains disabled. Removing public review commentary is not a finding that those legal/operational questions are resolved. Do not upload private identity documents or credentials.
+At the owner's request, all six public pages now use finalized reader-facing copy and the effective date above, without draft banners, noindex or geographic-distribution commentary. Research, unresolved disclosure questions and distribution details remain only in this README and the review materials. PR #1 is merged. Pages is enabled from main and /docs with HTTPS enforced, as authorized by the owner. Removing public review commentary is not a finding that those legal/operational questions are resolved. Do not upload private identity documents or credentials.
 
 ## Files and maintenance
 
@@ -47,6 +47,6 @@ The design uses MyPayce-inspired warm surfaces and teal colors, system fonts, ke
 
 ## Publication boundary
 
-The owner has authorized preparation of clean final copy and removal of public draft/noindex markers, but has not authorized merging or publication. Internal legal/operational questions still require review. Only after explicit final owner approval may the owner merge and select **Settings → Pages → Build and deployment → Deploy from a branch → main → /docs → Save**, verify HTTPS, and check all six URLs. Full steps are in the checklist.
+The owner authorized merging and publication for live review on October 28, 2026. PR #1 was merged at 9ad9a91f03e311e282974d50f4bfa0c20f595d68 and Pages now serves main → /docs over HTTPS. All six live pages and the stylesheet returned HTTP 200 and matched the reviewed sources. Internal legal/operational questions remain for owner review; publication is not a legal-clearance finding. Future changes should continue through review.
 
-Do not enable Pages, merge the draft PR, change App Store/EAS settings or wire these draft URLs into the app as part of this task. The application repository was audited read-only and is not modified here.
+Do not change App Store/EAS settings or wire these URLs into the app without separate authorization. The application repository was audited read-only and is not modified here.
