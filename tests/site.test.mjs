@@ -28,6 +28,7 @@ for (const page of documents) {
     assert.ok(page.html.includes('<main id="main" tabindex="-1">'));
     assert.ok(page.html.includes('class="skip-link" href="#main"'));
     assert.equal(new Set(ids(page.html)).size, ids(page.html).length, "No duplicate anchors");
+    assert.ok(!/<li><a href="#[^"]+">\d+\./.test(page.html), "Contents list does not duplicate ordered-list numbers");
     assert.ok(!/<(?:script|iframe|form|object|embed|video|audio)\b/i.test(page.html));
     assert.ok(!/\son\w+\s*=/i.test(page.html), "No inline event handlers");
     assert.ok(page.html.includes("connect-src 'none'"));
@@ -65,11 +66,13 @@ for (const page of documents) {
     assert.equal((switcher.match(/aria-current="true"/g) ?? []).length, 1);
   });
 
-  test(`${label}: draft status, contact and operator review remain explicit`, () => {
-    assert.ok(site.draft);
-    assert.ok(page.html.includes('name="robots" content="noindex, follow"'));
-    assert.ok(page.html.includes(translations[page.language].draftTitle));
-    assert.ok(page.html.includes(translations[page.language].reviewDescription));
+  test(`${label}: finalized date/contact remain without internal commentary or geographic exclusions`, () => {
+    assert.equal(site.effectiveDate, "2026-11-01");
+    assert.ok(!page.html.includes("noindex"));
+    assert.ok(!page.html.includes('class="draft-notice"'));
+    assert.ok(!page.html.includes('class="review-note"'));
+    assert.ok(!/\bdraft\b|tentative|publication blocker|publication review|owner.review|audited version|草案|未施行|公開前の確認|確認対象のバージョン/i.test(page.html));
+    assert.ok(!/European Union|\bEU\b|加盟27|27 European|27 EU/.test(page.html));
     assert.ok(page.html.includes('<time datetime="2026-11-01">'));
     assert.ok(page.html.includes(site.contact));
     assert.ok(!page.html.includes("tel:"));
@@ -113,15 +116,16 @@ test("Lifetime preserves current/future local features and separates subscriptio
   assert.match(requests, /cannot remotely inspect/);
 });
 
-test("international distribution is not reduced to Japan/US or sold as worldwide compliance", () => {
-  for (const language of ["en", "ja"]) {
-    const home = translations[language].pages.home.sections.find((section) => section.id === "audience").html;
-    assert.ok(home.includes("27"));
-    assert.ok(language === "en" ? home.includes("broad and international") : home.includes("広く海外"));
+test("geographic distribution and unresolved disclosure research stay in internal documentation", () => {
+  const research = readFileSync(join(root, "review/legal-review.md"), "utf8");
+  assert.ok(research.includes("27 EU member countries"));
+  assert.ok(research.includes("disclosure-on-request"));
+  for (const page of documents) {
+    assert.ok(!/claim compliance everywhere|declaration of worldwide compliance|すべての地域の法令適合|世界各国の法令/.test(page.html));
   }
 });
 
-test("privacy drafts disclose each actual external processing context", () => {
+test("privacy policies disclose each actual external processing context", () => {
   for (const language of ["en", "ja"]) {
     const policy = translations[language].pages.privacy.sections.map((section) => section.html).join("\n");
     for (const name of ["SQLite", "RevenueCat", "Apple", "Expo", "Gmail", "GitHub", "iCloud"]) {

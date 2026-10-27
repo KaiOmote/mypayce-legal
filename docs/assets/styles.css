@@ -7,8 +7,6 @@
   --teal: #003741;
   --teal-soft: #dce7e3;
   --line: #c0c8cb;
-  --draft: #f5ede0;
-  --draft-ink: #674716;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
   font-size: 100%;
   line-height: 1.75;
@@ -26,7 +24,7 @@ a:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; border-ra
 .site-header { padding-block: 28px 16px; border-bottom: 1px solid var(--line); }
 .header-main { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 1.35rem; font-weight: 750; letter-spacing: -.035em; }
-.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; background: var(--teal); color: white; border-radius: 14px; font-size: 1.25rem; }
+.brand-mark { line-height: 1; flex-shrink: 0; display: grid; place-items: center; width: 44px; height: 44px; background: var(--teal); color: white; border-radius: 14px; font-size: 1.25rem; }
 .brand-caption { display: block; color: var(--muted); font-size: .75rem; font-weight: 500; letter-spacing: .02em; }
 .language-switch { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; }
 .language-switch a { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 4px 14px; border-radius: 999px; font-size: .875rem; text-decoration: none; }
@@ -35,15 +33,14 @@ a:focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; border-ra
 .primary-navigation a { display: flex; align-items: center; min-height: 44px; text-decoration: none; font-size: .925rem; color: var(--muted); }
 .primary-navigation [aria-current] { color: var(--teal); font-weight: 700; text-decoration: underline; }
 main { padding-block: 28px 48px; }
-.draft-notice { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; background: var(--draft); color: var(--draft-ink); border-left: 3px solid var(--draft-ink); border-radius: 0 12px 12px 0; font-size: .9rem; }
 .page-heading { padding-block: 36px 24px; }
 .eyebrow { font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 10px; color: var(--teal); }
-h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.25; font-weight: 720; letter-spacing: -.035em; overflow-wrap: anywhere; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.25; font-weight: 720; text-wrap: balance; letter-spacing: -.035em; overflow-wrap: anywhere; }
 .lead { max-width: 62ch; font-size: 1.1rem; color: var(--muted); margin-block: 20px; }
 .effective-date { margin-bottom: 0; color: var(--muted); font-size: .85rem; }
 .hero { background: var(--teal); color: white; border-radius: 24px; padding: 32px; margin-block: 28px; }
 .hero .eyebrow, .hero .lead, .hero .effective-date { color: #dce7e3; }
-.hero h1 { max-width: 19ch; }
+.hero h1 { max-width: 19ch; hyphens: auto; }
 .document-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-block: 28px 36px; }
 .document-card { display: flex; flex-direction: column; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; transition: border-color .15s ease; }
 .document-card:hover { border-color: var(--teal); }
@@ -61,8 +58,6 @@ h1 { margin: 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.25; font-weigh
 .contents ol { margin: 0; columns: 2; column-gap: 36px; }
 .contents li { margin: 0; break-inside: avoid; padding-block: 3px; font-size: .9rem; }
 .contents a { display: inline-block; padding-block: 4px; }
-.review-note { background: var(--card); border: 1px solid var(--line); padding: 20px 24px; border-radius: 16px; margin-top: 32px; color: var(--muted); font-size: .9rem; }
-.review-note p { margin-bottom: 0; }
 .site-footer { display: flex; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-block: 24px 40px; font-size: .85rem; color: var(--muted); }
 .site-footer p { margin: 0; }
 .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }

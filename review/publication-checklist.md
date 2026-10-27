@@ -1,6 +1,6 @@
 # Publication checklist — owner approval required
 
-**Stop: these documents are drafts, not approved legal documents.** A draft PR, passing tests and a future date are not permission to publish. Do not enable GitHub Pages or merge the website until the owner approves final EN/JA content after the required review. All repository content is public already; keep private information out of commits and PR comments.
+**Stop: clean public copy is prepared for final owner approval, but publication is not approved.** A draft PR, passing tests and a set effective date are not permission to publish. Do not enable GitHub Pages or merge the website until the owner approves final EN/JA content after the required review. All repository content is public already; keep private information out of commits and PR comments.
 
 ## A. Resolve every legal/operational blocker
 
@@ -13,7 +13,7 @@
 - [ ] Resolve age audience/children's-data questions, any required notices, and regional consumer rights. Do not invent a product age restriction through the Terms.
 - [ ] Verify the final purchase presentation and App Store terms; preserve current/future Local Pro coverage and the separately priced online/AI exclusion. Keep Apple cancellation/refund/statutory rights and purchase restoration distinct from financial-data recovery.
 - [ ] Review both languages together, including any language-conflict approach. Neither language is assumed to override the other.
-- [ ] Approve the actual effective date; November 1, 2026 is tentative, not already in force.
+- [x] Set the effective date to November 1, 2026 / 2026年11月1日 in the pre-publication copy, as authorized by the owner.
 - [ ] Recheck the app audit against the final release commit and reconcile any changed data practices or provider settings.
 
 The owner may need qualified advice privately. Do not use the public PR to exchange private operator records or identity documents.
@@ -21,7 +21,7 @@ The owner may need qualified advice privately. Do not use the public PR to excha
 ## B. Approve final content before changing publication state
 
 1. Record explicit owner approval of the final documents and resolution of the blockers. Do not treat approval to prepare a draft as publication approval.
-2. In a separately approved finalization change, confirm the effective date, finalize lawful operator/disclosure language, remove pending-review prose only when resolved, and remove the draft banner/noindex intentionally. Update draft-specific tests along with that authorized transition; do not simply turn off a flag while blockers remain.
+2. The requested finalization pass has removed public review/blocker language, geographic exclusions, draft notices and noindex, and set the effective date. Corresponding tests are updated. This is pre-publication preparation only: review any remaining operator/disclosure obligations privately and approve the actual public documents before merging. Do not interpret removal of public commentary as resolution of the internal checklist.
 3. Run `npm run build`, `npm run check` and `git diff --check`; inspect the final generated HTML/CSS. Review mobile layout, large text, keyboard/screen-reader navigation and both languages. Automated structural checks do not prove rendered fit or legal adequacy.
 4. Merge the reviewed final content to `main`. Verify that only `docs/` will be served. `review/` is outside that folder but remains public source in GitHub.
 
@@ -49,7 +49,7 @@ Reference: [GitHub publishing-source instructions](https://docs.github.com/en/pa
 
 ## D. After publication, outside this draft task
 
-- Verify public HTTPS URLs return the approved documents without authentication, draft notices, missing assets or redirects to an unrelated site.
+- Verify public HTTPS URLs return the approved documents without authentication, missing assets or redirects to an unrelated site.
 - Through a separately authorized release-configuration task, the owner can set `EXPO_PUBLIC_PRIVACY_POLICY_URL` and `EXPO_PUBLIC_TERMS_OF_USE_URL` in the correct production environment and update App Store Connect links as appropriate. Do not wire unpublished draft URLs into a purchase release.
 - Confirm app privacy disclosures, purchase configuration and actual Apple sandbox behavior against the final binary. This website does not complete them automatically.
 - Later edits must update both languages, evidence and effective-date handling as appropriate. Changes pushed to an enabled Pages source can publish automatically: use review before merging.

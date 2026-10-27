@@ -1,0 +1,333 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "height": 800,
+      "language": "en",
+      "key": "home",
+      "scroll": 320,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "language": "en",
+      "key": "privacy",
+      "scroll": 320,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "language": "en",
+      "key": "terms",
+      "scroll": 320,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "language": "ja",
+      "key": "home",
+      "scroll": 320,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "language": "ja",
+      "key": "privacy",
+      "scroll": 320,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 320,
+      "height": 800,
+      "language": "ja",
+      "key": "terms",
+      "scroll": 320,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "language": "en",
+      "key": "home",
+      "scroll": 375,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "language": "en",
+      "key": "privacy",
+      "scroll": 375,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "language": "en",
+      "key": "terms",
+      "scroll": 375,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "language": "ja",
+      "key": "home",
+      "scroll": 375,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "language": "ja",
+      "key": "privacy",
+      "scroll": 375,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 375,
+      "height": 667,
+      "language": "ja",
+      "key": "terms",
+      "scroll": 375,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "key": "home",
+      "scroll": 390,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "key": "privacy",
+      "scroll": 390,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "key": "terms",
+      "scroll": 390,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "ja",
+      "key": "home",
+      "scroll": 390,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "ja",
+      "key": "privacy",
+      "scroll": 390,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "ja",
+      "key": "terms",
+      "scroll": 390,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "language": "en",
+      "key": "home",
+      "scroll": 1280,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "language": "en",
+      "key": "privacy",
+      "scroll": 1280,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "language": "en",
+      "key": "terms",
+      "scroll": 1280,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "language": "ja",
+      "key": "home",
+      "scroll": 1280,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "language": "ja",
+      "key": "privacy",
+      "scroll": 1280,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "language": "ja",
+      "key": "terms",
+      "scroll": 1280,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "language": "en",
+      "key": "home",
+      "scroll": 1440,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "language": "en",
+      "key": "privacy",
+      "scroll": 1440,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "language": "en",
+      "key": "terms",
+      "scroll": 1440,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "language": "ja",
+      "key": "home",
+      "scroll": 1440,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "language": "ja",
+      "key": "privacy",
+      "scroll": 1440,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "language": "ja",
+      "key": "terms",
+      "scroll": 1440,
+      "fontSize": "16px",
+      "outside": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "key": "home",
+      "enlarged": true,
+      "scroll": 390,
+      "fontSize": "32px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "key": "privacy",
+      "enlarged": true,
+      "scroll": 390,
+      "fontSize": "32px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "en",
+      "key": "terms",
+      "enlarged": true,
+      "scroll": 390,
+      "fontSize": "32px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "ja",
+      "key": "home",
+      "enlarged": true,
+      "scroll": 390,
+      "fontSize": "32px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "ja",
+      "key": "privacy",
+      "enlarged": true,
+      "scroll": 390,
+      "fontSize": "32px"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "language": "ja",
+      "key": "terms",
+      "enlarged": true,
+      "scroll": 390,
+      "fontSize": "32px"
+    }
+  ],
+  "preservedDisclosureSections": 24,
+  "keyboardNavigation": "passed",
+  "languageSwitch": "passed",
+  "externalRequests": [],
+  "consoleErrors": []
+}

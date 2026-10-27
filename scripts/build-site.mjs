@@ -17,7 +17,7 @@ export function renderPage(language, key) {
   const page = text.pages[key];
   const otherLanguage = language === "en" ? "ja" : "en";
   const navigation = pageKeys.map((item) => `<a href="${pagePath(language, item)}"${item === key ? ' aria-current="page"' : ""}>${text.navigation[item]}</a>`).join("\n          ");
-  const toc = key === "home" ? "" : `<nav class="contents" aria-label="${text.contents}"><p class="eyebrow">${text.contents}</p><ol>${page.sections.map((section) => `<li><a href="#${section.id}">${section.title}</a></li>`).join("")}</ol></nav>`;
+  const toc = key === "home" ? "" : `<nav class="contents" aria-label="${text.contents}"><p class="eyebrow">${text.contents}</p><ol>${page.sections.map((section) => `<li><a href="#${section.id}">${section.title.replace(/^\d+\.\s*/, "")}</a></li>`).join("")}</ol></nav>`;
   const cards = key !== "home" ? "" : `<div class="document-grid">${["privacy", "terms"].map((item) => `<a class="document-card" href="${pagePath(language, item)}"><span class="eyebrow">${text.cardLabels[item]}</span><h2>${text.navigation[item]}</h2><p>${text.cardDescriptions[item]}</p><span class="card-action">${text.readDocument}<span aria-hidden="true"> →</span></span></a>`).join("")}</div>`;
   const sections = page.sections.map((section) => `<section id="${section.id}" aria-labelledby="${section.id}-title"><h2 id="${section.id}-title">${section.title}</h2>${section.html}</section>`).join("\n        ");
   return `<!doctype html>
@@ -26,7 +26,6 @@ export function renderPage(language, key) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${escape(page.description)}">
-  <meta name="robots" content="${site.draft ? "noindex, follow" : "index, follow"}">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
   <title>${escape(page.title)} · MyPayce</title>
@@ -45,19 +44,17 @@ export function renderPage(language, key) {
     <nav class="primary-navigation" aria-label="${text.navigationLabel}">${navigation}</nav>
   </header>
   <main id="main" tabindex="-1">
-    ${site.draft ? `<aside class="draft-notice" role="note"><strong>${text.draftTitle}</strong><span>${text.draftDescription}</span></aside>` : ""}
     <div class="page-heading ${key === "home" ? "hero" : ""}">
       <p class="eyebrow">${text.eyebrow}</p>
       <h1>${page.title}</h1>
       <p class="lead">${page.lead}</p>
-      <p class="effective-date">${text.effectiveLabel} <time datetime="${site.proposedEffectiveDate}">${text.effectiveDate}</time> · ${text.tentative}</p>
+      <p class="effective-date">${text.effectiveLabel} <time datetime="${site.effectiveDate}">${text.effectiveDate}</time></p>
     </div>
     ${cards}
     <article class="prose" aria-label="${escape(page.title)}">
       ${toc}
       ${sections}
     </article>
-    <aside class="review-note" aria-label="${text.reviewLabel}"><strong>${text.reviewLabel}</strong><p>${text.reviewDescription}</p></aside>
   </main>
   <footer class="site-footer"><p>MyPayce · ${text.footer}</p><a href="mailto:${site.contact.replace("+", "%2B")}">${site.contact}</a></footer>
 </body>
@@ -82,5 +79,5 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     }
   }
   if (!check) await writeFile(resolve(root, "docs/.nojekyll"), "");
-  console.log(check ? "All six committed pages match their sources." : "Generated six draft static pages; no publication performed.");
+  console.log(check ? "All six committed pages match their sources." : "Generated six static pages; no publication performed.");
 }

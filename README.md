@@ -2,7 +2,7 @@
 
 A responsive English/Japanese legal-information website for MyPayce, prepared for **owner and legal review**. This repository is public, but the site must not be published until the owner approves the final documents.
 
-**Status: draft; not legally approved or effective.** Proposed effective date: **November 1, 2026 / 2026年11月1日**, subject to approval. MyPayce is an app/trade name, not a verified legal entity. No residential address or personal phone number belongs in this repository, Git history or PR discussions.
+**Status: public copy finalized for owner approval; not published.** Effective date set to **November 1, 2026 / 2026年11月1日**. This preparation does not certify legal compliance or authorize publication. MyPayce is an app/trade name, not a verified legal entity. No residential address or personal phone number belongs in this repository, Git history or PR discussions.
 
 The owner intends broad international App Store distribution excluding the 27 EU member countries. Japan and the United States are primary research reference points, not the only distribution markets. No worldwide-compliance claim is made. EU exclusion is not treated as a blanket privacy-law exemption.
 
@@ -14,7 +14,7 @@ The owner intends broad international App Store distribution excluding the 27 EU
 | Privacy | https://kaiomote.github.io/mypayce-legal/privacy/ | https://kaiomote.github.io/mypayce-legal/ja/privacy/ |
 | Terms | https://kaiomote.github.io/mypayce-legal/terms/ | https://kaiomote.github.io/mypayce-legal/ja/terms/ |
 
-Draft contact: **kaiomote10+MyPayce@gmail.com**, the same mailbox used for app feedback. A monitored shared mailbox is reasonable; the operator must establish how support and privacy/disclosure requests are separated and handled. Its presence alone does not fulfil every operator-identification requirement.
+Contact: **kaiomote10+MyPayce@gmail.com**, the same mailbox used for app feedback. A monitored shared mailbox is reasonable; the operator must establish how support and privacy/disclosure requests are separated and handled. Its presence alone does not fulfil every operator-identification requirement.
 
 ## Review first
 
@@ -23,13 +23,13 @@ Draft contact: **kaiomote10+MyPayce@gmail.com**, the same mailbox used for app f
 - [Publication checklist and exact Pages setup](review/publication-checklist.md): unresolved blockers and owner-only release steps.
 - [Verification evidence](review/verification.md): automated checks and manual QA still required.
 
-All six pages carry a visible draft notice, tentative date and noindex metadata. These are not access controls; repository content is public, and noindex is not a guarantee against indexing. Do not upload private identity documents or credentials for review.
+At the owner's request, all six public pages now use finalized reader-facing copy and the effective date above, without draft banners, noindex or geographic-distribution commentary. Research, unresolved disclosure questions and distribution details remain only in this README and the review materials. The PR remains a draft and Pages remains disabled. Removing public review commentary is not a finding that those legal/operational questions are resolved. Do not upload private identity documents or credentials.
 
 ## Files and maintenance
 
 - `docs/`: committed static HTML/CSS plus `.nojekyll`; the only Pages publishing directory.
 - `content/en.mjs`, `content/ja.mjs`: corresponding original EN/JA legal content.
-- `site.config.mjs`: project subpath, public contact, draft status and proposed date.
+- `site.config.mjs`: project subpath, public contact and effective date.
 - `scripts/build-site.mjs`: dependency-free authoring helper sharing the shell/navigation across six static pages. Nothing executes in the visitor's browser.
 - `tests/`: Node built-in tests; no installed packages or browser instance required.
 - `review/`: source audit and owner/legal review records, outside the hosted folder (still public in GitHub).
@@ -47,6 +47,6 @@ The design uses MyPayce-inspired warm surfaces and teal colors, system fonts, ke
 
 ## Publication boundary
 
-Only after all review blockers are resolved and the owner explicitly approves final EN/JA documents may a reviewed finalization change remove draft/noindex markers and confirm the effective date. The owner may then merge and select **Settings → Pages → Build and deployment → Deploy from a branch → main → /docs → Save**, verify HTTPS, and check all six URLs. Full steps are in the checklist.
+The owner has authorized preparation of clean final copy and removal of public draft/noindex markers, but has not authorized merging or publication. Internal legal/operational questions still require review. Only after explicit final owner approval may the owner merge and select **Settings → Pages → Build and deployment → Deploy from a branch → main → /docs → Save**, verify HTTPS, and check all six URLs. Full steps are in the checklist.
 
 Do not enable Pages, merge the draft PR, change App Store/EAS settings or wire these draft URLs into the app as part of this task. The application repository was audited read-only and is not modified here.
