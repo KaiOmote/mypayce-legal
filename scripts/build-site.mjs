@@ -7,7 +7,7 @@ import ja from "../content/ja.mjs";
 
 export const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const translations = { en, ja };
-export const pageKeys = ["home", "privacy", "terms"];
+export const pageKeys = ["home", "privacy", "terms", "support"];
 const escape = (value) => String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 export function pagePath(language, key) {
   return `${site.basePath}${language === "ja" ? "ja/" : ""}${key === "home" ? "" : `${key}/`}`;
@@ -17,7 +17,7 @@ export function renderPage(language, key) {
   const page = text.pages[key];
   const otherLanguage = language === "en" ? "ja" : "en";
   const navigation = pageKeys.map((item) => `<a href="${pagePath(language, item)}"${item === key ? ' aria-current="page"' : ""}>${text.navigation[item]}</a>`).join("\n          ");
-  const toc = key === "home" ? "" : `<nav class="contents" aria-label="${text.contents}"><p class="eyebrow">${text.contents}</p><ol>${page.sections.map((section) => `<li><a href="#${section.id}">${section.title.replace(/^\d+\.\s*/, "")}</a></li>`).join("")}</ol></nav>`;
+  const toc = key === "home" || key === "support" ? "" : `<nav class="contents" aria-label="${text.contents}"><p class="eyebrow">${text.contents}</p><ol>${page.sections.map((section) => `<li><a href="#${section.id}">${section.title.replace(/^\d+\.\s*/, "")}</a></li>`).join("")}</ol></nav>`;
   const cards = key !== "home" ? "" : `<div class="document-grid">${["privacy", "terms"].map((item) => `<a class="document-card" href="${pagePath(language, item)}"><span class="eyebrow">${text.cardLabels[item]}</span><h2>${text.navigation[item]}</h2><p>${text.cardDescriptions[item]}</p><span class="card-action">${text.readDocument}<span aria-hidden="true"> →</span></span></a>`).join("")}</div>`;
   const sections = page.sections.map((section) => `<section id="${section.id}" aria-labelledby="${section.id}-title"><h2 id="${section.id}-title">${section.title}</h2>${section.html}</section>`).join("\n        ");
   return `<!doctype html>
@@ -48,7 +48,7 @@ export function renderPage(language, key) {
       <p class="eyebrow">${text.eyebrow}</p>
       <h1>${page.title}</h1>
       <p class="lead">${page.lead}</p>
-      <p class="effective-date">${text.effectiveLabel} <time datetime="${site.effectiveDate}">${text.effectiveDate}</time></p>
+      ${key === "support" ? "" : `<p class="effective-date">${text.effectiveLabel} <time datetime="${site.effectiveDate}">${text.effectiveDate}</time></p>`}
     </div>
     ${cards}
     <article class="prose" aria-label="${escape(page.title)}">
@@ -79,5 +79,5 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     }
   }
   if (!check) await writeFile(resolve(root, "docs/.nojekyll"), "");
-  console.log(check ? "All six committed pages match their sources." : "Generated six static pages; no publication performed.");
+  console.log(check ? "All committed pages match their sources." : "Generated static pages; no publication performed.");
 }

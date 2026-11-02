@@ -73,7 +73,7 @@ for (const page of documents) {
     assert.ok(!page.html.includes('class="review-note"'));
     assert.ok(!/\bdraft\b|tentative|publication blocker|publication review|owner.review|audited version|草案|未施行|公開前の確認|確認対象のバージョン/i.test(page.html));
     assert.ok(!/European Union|\bEU\b|加盟27|27 European|27 EU/.test(page.html));
-    assert.ok(page.html.includes('<time datetime="2026-11-01">'));
+    assert.equal(page.html.includes('<time datetime="2026-11-01">'), page.key !== "support");
     assert.ok(page.html.includes(site.contact));
     assert.ok(!page.html.includes("tel:"));
     assert.ok(!page.html.includes("〒"));
@@ -168,6 +168,25 @@ test("hosting has no custom domain, application dependencies or deployment workf
   const pkg = JSON.parse(readFileSync(join(root, "package.json"), "utf8"));
   assert.equal(pkg.dependencies, undefined);
   assert.equal(pkg.devDependencies, undefined);
-  const allowed = new Set(["assets", "index.html", "privacy", "terms", "ja", ".nojekyll"]);
+  const allowed = new Set(["assets", "index.html", "privacy", "terms", "support", "ja", ".nojekyll"]);
   assert.ok(readdirSync(join(root, "docs")).every((name) => allowed.has(name)), "Review notes stay outside the hosted folder");
+});
+
+
+test("support pages expose the requested email and are linked from every same-language page", () => {
+  assert.equal(pagePath("en", "support"), "/mypayce-legal/support/");
+  assert.equal(pagePath("ja", "support"), "/mypayce-legal/ja/support/");
+  for (const language of ["en", "ja"]) {
+    const support = byPath.get(pagePath(language, "support"));
+    assert.ok(support.html.includes(">kaiomote10+mypayce@gmail.com</a>"));
+    const email = references(support.html).find((href) => href.startsWith("mailto:"));
+    assert.equal(decodeURIComponent(new URL(email).pathname).toLowerCase(), "kaiomote10+mypayce@gmail.com");
+    assert.ok(email.includes("%2B"));
+    assert.ok(!support.html.includes('class="contents"'));
+    assert.ok(!support.html.includes('class="effective-date"'));
+    for (const page of documents.filter((page) => page.language === language)) {
+      const navigation = page.html.match(/<nav class="primary-navigation"[^>]*>([\s\S]*?)<\/nav>/)[1];
+      assert.ok(navigation.includes(`href="${support.pathname}"`));
+    }
+  }
 });

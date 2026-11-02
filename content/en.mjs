@@ -1,9 +1,11 @@
+import { site } from "../site.config.mjs";
+
 export default {
   brandHome: "MyPayce legal information home",
   brandCaption: "Privacy & terms",
   language: "Language",
   navigationLabel: "Main navigation",
-  navigation: { home: "Overview", privacy: "Privacy Policy", terms: "Terms of Use" },
+  navigation: { home: "Overview", privacy: "Privacy Policy", terms: "Terms of Use", support: "Support" },
   skip: "Skip to content",
   contents: "On this page",
   eyebrow: "MyPayce legal information",
@@ -17,6 +19,14 @@ export default {
   },
   footer: "Legal information · English / 日本語",
   pages: {
+    support: {
+      title: "MyPayce Support",
+      description: "Contact MyPayce support with questions or feedback about the app.",
+      lead: "Questions or feedback about MyPayce? Get in touch by email.",
+      sections: [
+        { id: "contact", title: "Contact", html: `<p><a href="mailto:${site.contact.replace("+", "%2B")}">${site.contact.toLowerCase()}</a></p>` },
+      ],
+    },
     home: {
       title: "Clear information. At your pace.",
       description: "Privacy and purchase terms for MyPayce, the local-first money-planning app. English and Japanese.",

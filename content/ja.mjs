@@ -1,9 +1,11 @@
+import { site } from "../site.config.mjs";
+
 export default {
   brandHome: "MyPayce 法的情報のトップページ",
   brandCaption: "プライバシーと利用規約",
   language: "言語",
   navigationLabel: "メインナビゲーション",
-  navigation: { home: "概要", privacy: "プライバシーポリシー", terms: "利用規約" },
+  navigation: { home: "概要", privacy: "プライバシーポリシー", terms: "利用規約", support: "サポート" },
   skip: "本文へ移動",
   contents: "このページの内容",
   eyebrow: "MyPayce の法的情報",
@@ -17,6 +19,14 @@ export default {
   },
   footer: "法的情報 · English / 日本語",
   pages: {
+    support: {
+      title: "MyPayce サポート",
+      description: "MyPayceに関するご質問やご意見のお問い合わせ先。",
+      lead: "マイペイスに関するご質問やご意見は、メールでお問い合わせください。",
+      sections: [
+        { id: "contact", title: "お問い合わせ", html: `<p><a href="mailto:${site.contact.replace("+", "%2B")}">${site.contact.toLowerCase()}</a></p>` },
+      ],
+    },
     home: {
       title: "安心のための情報を、わかりやすく。",
       description: "ローカルファーストの家計管理アプリMyPayceのプライバシーポリシーと利用規約。日本語と英語でご案内します。",
